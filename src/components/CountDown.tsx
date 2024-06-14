@@ -12,10 +12,11 @@ export default function CountDown() {
         minutes: 0,
         seconds: 0,
     })
+    const [loaded, setLoaded] = useState(false)
     const timeLabels = ['Days', 'Hrs', 'Mins', 'Secs'] as const
 
     useEffect(() => {
-        const launchDate = new Date("2024-07-01T12:00:00").getTime()
+        const launchDate = new Date("2024-06-16T12:00:00").getTime()
         const interval = setInterval(() => {
             const now = new Date().getTime()
             const distance = launchDate - now
@@ -37,13 +38,25 @@ export default function CountDown() {
         }, 1000)
         return () => clearInterval(interval)
     }, [])
+
+    useEffect(() => {
+        setLoaded(true)
+    }, [])
+
+    if (!loaded)
+        return (<></>)
+
     return (
         <Wrapper>
-            <div className='flex gap-3 full items-center justify-center h-[52px]'>
-                <div className='flex items-center text-[18px] leading-[28px] gap-3'>
-                    <span className=''><Image src={"/assets/images/micro/loudspeaker.png"} alt="loudspeaker vector" height={34} width={34} /></span>
-                    <p className="font-semibold">NFO Live - Motilal Oswal Nifty India Defence Index Fund</p>
-                    <div className="grid grid-cols-4 gap-2 text-black">
+            <div className='flex flex-col md:flex-row gap-3 full items-center justify-center min-h-[52px] px-4 md:px-8 py-4'>
+                <div className='flex flex-col lg:flex-row lg:items-center text-[18px] leading-[28px] gap-3'>
+                    <p className="flex flex-col lg:flex-row items-start gap-3 max-lg:items-center lg:justify-center">
+                        <span className=''>
+                            <Image src={"/assets/images/micro/loudspeaker.png"} alt="loudspeaker vector" className="flex aspect-square flex-shrink-0 max-w-[34px]" height={34} width={34} />
+                        </span>
+                        <span className="font-normal text-center">NFO Live <p className="hidden lg:inline-flex">-</p> <br className="block lg:hidden" /><span className="font-semibold">{"Motilal Oswal Nifty India Defence Index Fund"}</span>{" "}<br className="block lg:hidden" /><span>Closes in</span></span>
+                    </p>
+                    <div className="grid grid-cols-[repeat(4,36px)] gap-2 text-black self-center">
                         {Object.keys(timeLeft).map((val, i: number) =>
                             <div key={i} className="bg-gradient-to-b from-[#dfdfdf] to-[#d3d3d3] w-[36px] rounded-md px-1 py-1.5 flex flex-col items-center justify-center">
                                 <div className="text-[20px] leading-[16px] font-mono font-semibold">{timeLeft[val]}</div>
@@ -52,9 +65,9 @@ export default function CountDown() {
                         )}
                     </div>
                 </div>
-                <div className="flex gap-3">
-                    <Button variant={"destructive"}>Invest Now</Button>
-                    <Button variant={"outline"}>Call Back</Button>
+                <div className="flex flex-col lg:flex-row gap-3">
+                    <Button size={"cta"} variant={"destructive"}>Invest Now</Button>
+                    <Button size={"cta"} variant={"outline"}>Call Back</Button>
                 </div>
             </div>
         </Wrapper>
