@@ -48,13 +48,13 @@ export default function CountDown() {
 
     return (
         <Wrapper>
-            <div className='flex flex-col md:flex-row gap-3 full items-center justify-center min-h-[52px] px-4 md:px-8 py-4'>
+            <div className='flex flex-col sm:flex-row gap-3 sm:gap-8 full items-center justify-center min-h-[52px] px-4 sm:px-8 py-4'>
                 <div className='flex flex-col lg:flex-row lg:items-center text-[18px] leading-[28px] gap-3'>
-                    <p className="flex flex-col lg:flex-row items-start gap-3 max-lg:items-center lg:justify-center">
+                    <p className="flex flex-col lg:flex-row items-start gap-3 max-lg:items-center lg:justify-center text-white">
                         <span className=''>
                             <Image src={"/assets/images/micro/loudspeaker.png"} alt="loudspeaker vector" className="flex aspect-square flex-shrink-0 max-w-[34px]" height={34} width={34} />
                         </span>
-                        <span className="font-normal text-center">NFO Live <p className="hidden lg:inline-flex">-</p> <br className="block lg:hidden" /><span className="font-semibold">{"Motilal Oswal Nifty India Defence Index Fund"}</span>{" "}<br className="block lg:hidden" /><span>Closes in</span></span>
+                        <span className="font-light text-center text-sm sm:text-base">NFO Live <p className="hidden lg:inline-flex">-</p> <br className="block lg:hidden" /><span className="font-bold">{"Motilal Oswal Nifty India Defence Index Fund"}</span>{" "}<br className="block lg:hidden" /><span className="whitespace-nowrap">Closes in</span></span>
                     </p>
                     <div className="grid grid-cols-[repeat(4,36px)] gap-2 text-black self-center">
                         {Object.keys(timeLeft).map((val, i: number) =>
@@ -67,7 +67,7 @@ export default function CountDown() {
                 </div>
                 <div className="flex flex-col lg:flex-row gap-3">
                     <Button size={"cta"} variant={"destructive"}>Invest Now</Button>
-                    <Button size={"cta"} variant={"outline"}>Call Back</Button>
+                    <Button size={"cta"} variant={"outline"} className="text-white">Call Back</Button>
                 </div>
             </div>
         </Wrapper>
