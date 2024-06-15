@@ -4,7 +4,8 @@
 
 @layer base {
     :root {
-        --countdown-bg: 244, 51%, 33%;
+        --mo-blue: 244 51% 33%;
+        --mo-yellow: 40 97% 54%;
 
 
         --background: 0 0% 100%;

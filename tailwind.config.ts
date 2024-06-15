@@ -19,8 +19,9 @@ const config = {
         },
         extend: {
             colors: {
-                countdown: {
-                    background: "hsl(var(--countdown-bg))",
+                mo: {
+                    blue: "hsl(var(--mo-blue))",
+                    yellow: "hsl(var(--mo-yellow))",
                 },
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",

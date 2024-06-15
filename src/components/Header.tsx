@@ -2,7 +2,7 @@ import CountDown from './CountDown'
 
 const Header = () => {
     return (
-        <header className='w-full grid justify-items-center bg-countdown-background'>
+        <header className='w-full'>
             <CountDown />
         </header>
     )
