@@ -14,7 +14,7 @@ export default function CountDown() {
         seconds: 0,
     })
     const [loaded, setLoaded] = useState(false)
-    const timeLabels = ['Days', 'Hrs', 'Mins', 'Secs'] as const
+    const timeLabels = ["Days", "Hrs", "Mins", "Secs"] as const
 
     useEffect(() => {
         const launchDate = new Date("2024-06-16T12:00:00").getTime()
@@ -31,8 +31,12 @@ export default function CountDown() {
                 })
             } else {
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+                const hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+                )
+                const minutes = Math.floor(
+                    (distance % (1000 * 60 * 60)) / (1000 * 60),
+                )
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000)
                 setTimeLeft({ days, hours, minutes, seconds })
             }
@@ -44,32 +48,63 @@ export default function CountDown() {
         setLoaded(true)
     }, [])
 
-    if (!loaded)
-        return (<></>)
+    if (!loaded) return <></>
 
     return (
         <Container className="bg-mo-blue">
             <Wrapper>
-                <div className='flex flex-col sm:flex-row gap-3 md:gap-8 full items-center justify-center min-h-[52px] px-4 sm:px-8 py-4'>
-                    <div className='flex flex-col lg:flex-row lg:items-center text-[18px] leading-[28px] gap-3'>
-                        <p className="flex flex-col lg:flex-row items-center gap-3 max-lg:items-center lg:justify-center text-white">
-                            <span className=''>
-                                <Image src={"/assets/images/micro/loudspeaker.png"} alt="loudspeaker vector" className="flex aspect-square flex-shrink-0 max-w-[34px]" height={34} width={34} />
+                <div className="full flex min-h-[52px] flex-col items-center justify-center gap-3 px-4 py-4 sm:flex-row sm:px-8 md:gap-8">
+                    <div className="flex flex-col gap-3 text-[18px] leading-[28px] lg:flex-row lg:items-center">
+                        <p className="flex flex-col items-center gap-3 text-white max-lg:items-center lg:flex-row lg:justify-center">
+                            <span className="">
+                                <Image
+                                    src={"/assets/images/micro/loudspeaker.png"}
+                                    alt="loudspeaker vector"
+                                    className="flex aspect-square max-w-[34px] flex-shrink-0"
+                                    height={34}
+                                    width={34}
+                                />
                             </span>
-                            <span className="font-light text-center text-sm sm:text-base">NFO Live <p className="hidden lg:inline-flex">-</p> <br className="block lg:hidden" /><span className="font-bold max-md:whitespace-nowrap">{"Motilal Oswal Nifty India Defence Index Fund"}</span>{" "}<br className="block lg:hidden" /><span className="whitespace-nowrap">Closes in</span></span>
+                            <span className="text-center text-sm font-light sm:text-base">
+                                NFO Live{" "}
+                                <p className="hidden lg:inline-flex">-</p>{" "}
+                                <br className="block lg:hidden" />
+                                <span className="font-bold max-md:whitespace-nowrap">
+                                    {
+                                        "Motilal Oswal Nifty India Defence Index Fund"
+                                    }
+                                </span>{" "}
+                                <br className="block lg:hidden" />
+                                <span className="whitespace-nowrap">
+                                    Closes in
+                                </span>
+                            </span>
                         </p>
-                        <div className="grid grid-cols-[repeat(4,36px)] gap-2 text-black self-center">
-                            {Object.keys(timeLeft).map((val, i: number) =>
-                                <div key={i} className="bg-gradient-to-b from-[#dfdfdf] to-[#d3d3d3] w-[36px] rounded-md px-1 py-1.5 flex flex-col items-center justify-center">
-                                    <div className="text-[20px] leading-[16px] font-mono font-semibold">{timeLeft[val]}</div>
-                                    <div className="text-[10px] leading-[12px] font-medium">{timeLabels[i]}</div>
+                        <div className="grid grid-cols-[repeat(4,36px)] gap-2 self-center text-black">
+                            {Object.keys(timeLeft).map((val, i: number) => (
+                                <div
+                                    key={i}
+                                    className="flex w-[36px] flex-col items-center justify-center rounded-md bg-gradient-to-b from-[#dfdfdf] to-[#d3d3d3] px-1 py-1.5">
+                                    <div className="font-mono text-[20px] font-semibold leading-[16px]">
+                                        {timeLeft[val]}
+                                    </div>
+                                    <div className="text-[10px] font-medium leading-[12px]">
+                                        {timeLabels[i]}
+                                    </div>
                                 </div>
-                            )}
+                            ))}
                         </div>
                     </div>
-                    <div className="flex flex-col lg:flex-row gap-3">
-                        <Button size={"cta"} variant={"destructive"}>Invest Now</Button>
-                        <Button size={"cta"} variant={"outline"} className="text-white">Call Back</Button>
+                    <div className="flex flex-col gap-3 lg:flex-row">
+                        <Button size={"cta"} variant={"destructive"}>
+                            Invest Now
+                        </Button>
+                        <Button
+                            size={"cta"}
+                            variant={"outline"}
+                            className="text-white">
+                            Call Back
+                        </Button>
                     </div>
                 </div>
             </Wrapper>
