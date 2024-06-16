@@ -52,11 +52,11 @@ export default function CountDown() {
             <Wrapper>
                 <div className='flex flex-col sm:flex-row gap-3 md:gap-8 full items-center justify-center min-h-[52px] px-4 sm:px-8 py-4'>
                     <div className='flex flex-col lg:flex-row lg:items-center text-[18px] leading-[28px] gap-3'>
-                        <p className="flex flex-col lg:flex-row items-start gap-3 max-lg:items-center lg:justify-center text-white">
+                        <p className="flex flex-col lg:flex-row items-center gap-3 max-lg:items-center lg:justify-center text-white">
                             <span className=''>
                                 <Image src={"/assets/images/micro/loudspeaker.png"} alt="loudspeaker vector" className="flex aspect-square flex-shrink-0 max-w-[34px]" height={34} width={34} />
                             </span>
-                            <span className="font-light text-center text-sm sm:text-base">NFO Live <p className="hidden lg:inline-flex">-</p> <br className="block lg:hidden" /><span className="font-bold">{"Motilal Oswal Nifty India Defence Index Fund"}</span>{" "}<br className="block lg:hidden" /><span className="whitespace-nowrap">Closes in</span></span>
+                            <span className="font-light text-center text-sm sm:text-base">NFO Live <p className="hidden lg:inline-flex">-</p> <br className="block lg:hidden" /><span className="font-bold max-md:whitespace-nowrap">{"Motilal Oswal Nifty India Defence Index Fund"}</span>{" "}<br className="block lg:hidden" /><span className="whitespace-nowrap">Closes in</span></span>
                         </p>
                         <div className="grid grid-cols-[repeat(4,36px)] gap-2 text-black self-center">
                             {Object.keys(timeLeft).map((val, i: number) =>
