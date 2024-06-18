@@ -17,7 +17,7 @@ export default function CountDown() {
     const timeLabels = ["Days", "Hrs", "Mins", "Secs"] as const
 
     useEffect(() => {
-        const launchDate = new Date("2024-06-16T12:00:00").getTime()
+        const launchDate = new Date("2024-06-25T12:00:00").getTime()
         const interval = setInterval(() => {
             const now = new Date().getTime()
             const distance = launchDate - now
@@ -55,7 +55,7 @@ export default function CountDown() {
             <Wrapper>
                 <div className="full flex min-h-[52px] flex-col items-center justify-center gap-3 px-4 py-4 sm:flex-row sm:px-8 md:gap-8">
                     <div className="flex flex-col gap-3 text-[18px] leading-[28px] lg:flex-row lg:items-center">
-                        <p className="flex flex-col items-center gap-3 text-white max-lg:items-center lg:flex-row lg:justify-center">
+                        <div className="flex flex-col items-center gap-3 text-white max-lg:items-center lg:flex-row lg:justify-center">
                             <span className="">
                                 <Image
                                     src={"/assets/images/micro/loudspeaker.png"}
@@ -79,12 +79,13 @@ export default function CountDown() {
                                     Closes in
                                 </span>
                             </span>
-                        </p>
+                        </div>
                         <div className="grid grid-cols-[repeat(4,36px)] gap-2 self-center text-black">
                             {Object.keys(timeLeft).map((val, i: number) => (
                                 <div
                                     key={i}
-                                    className="flex w-[36px] flex-col items-center justify-center rounded-md bg-gradient-to-b from-[#dfdfdf] to-[#d3d3d3] px-1 py-1.5">
+                                    className="flex w-[36px] flex-col items-center justify-center rounded-md bg-gradient-to-b from-[#dfdfdf] to-[#d3d3d3] px-1 py-1.5"
+                                >
                                     <div className="font-mono text-[20px] font-semibold leading-[16px]">
                                         {timeLeft[val]}
                                     </div>
@@ -102,7 +103,8 @@ export default function CountDown() {
                         <Button
                             size={"cta"}
                             variant={"outline"}
-                            className="text-white">
+                            className="text-white"
+                        >
                             Call Back
                         </Button>
                     </div>

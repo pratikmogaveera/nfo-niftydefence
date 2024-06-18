@@ -3,10 +3,10 @@ import type { Config } from "tailwindcss"
 const config = {
     darkMode: ["class"],
     content: [
-        './pages/**/*.{ts,tsx}',
-        './components/**/*.{ts,tsx}',
-        './app/**/*.{ts,tsx}',
-        './src/**/*.{ts,tsx}',
+        "./pages/**/*.{ts,tsx}",
+        "./components/**/*.{ts,tsx}",
+        "./app/**/*.{ts,tsx}",
+        "./src/**/*.{ts,tsx}",
     ],
     prefix: "",
     theme: {
@@ -21,7 +21,11 @@ const config = {
             colors: {
                 mo: {
                     blue: "hsl(var(--mo-blue))",
-                    yellow: "hsl(var(--mo-yellow))",
+                    yellow: {
+                        DEFAULT: "hsl(var(--mo-yellow))",
+                        secondary: "hsl(var(--mo-yellow-secondary))",
+                    },
+                    grey: "hsl(var(--mo-grey))",
                 },
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",

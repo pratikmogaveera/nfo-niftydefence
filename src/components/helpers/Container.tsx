@@ -9,7 +9,9 @@ const Container = ({
     className: string
 }) => {
     return (
-        <div className={cn("grid justify-center", className)}>{children}</div>
+        <div className={cn("flex w-full justify-center", className)}>
+            {children}
+        </div>
     )
 }
 
