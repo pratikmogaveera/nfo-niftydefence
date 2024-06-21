@@ -8,11 +8,7 @@ const Container = ({
     children: React.ReactNode
     className: string
 }) => {
-    return (
-        <div className={cn("flex w-full justify-center", className)}>
-            {children}
-        </div>
-    )
+    return <div className={cn("flex w-full", className)}>{children}</div>
 }
 
 export default Container
