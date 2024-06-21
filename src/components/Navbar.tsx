@@ -10,7 +10,6 @@ const Navbar = () => {
     const [selectedDomain, setSelectedDomain] =
         useState<(typeof domains)[number]>("mutual-fund")
     const [selectedLink, setSelectedLink] = useState<string>("Home")
-    console.log(selectedDomain)
 
     const changeDomain = (domain: (typeof domains)[number]) => {
         setSelectedDomain(domain)
@@ -30,7 +29,7 @@ const Navbar = () => {
                         layout="fill"
                         objectFit="contain"
                         priority
-                        className="p-1 md:p-4"
+                        className="p-1 md:p-2"
                     />
                 </Link>
                 <div className="flex h-full flex-1 flex-col justify-start text-white">
@@ -52,7 +51,7 @@ const Navbar = () => {
                                 <Link
                                     href={item.href}
                                     key={i}
-                                    className={`gap-2 px-4 py-2 text-xs transition-all ${selectedLink === item.title ? "bg-mo-yellow-secondary text-white" : ""} hover:bg-mo-yellow-secondary hover:text-white`}
+                                    className={`gap-2 px-4 py-2 text-xs leading-3 transition-all ${selectedLink === item.title ? "bg-mo-yellow-secondary text-white" : ""} hover:bg-mo-yellow-secondary hover:text-white`}
                                     onMouseDown={() =>
                                         setSelectedLink(item.title)
                                     }

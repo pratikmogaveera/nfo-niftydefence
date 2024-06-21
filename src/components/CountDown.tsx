@@ -55,19 +55,24 @@ export default function CountDown() {
             <Wrapper>
                 <div className="full flex min-h-[52px] flex-col items-center justify-center gap-3 px-4 py-4 sm:flex-row sm:px-8 md:gap-8">
                     <div className="flex flex-col gap-3 text-[18px] leading-[28px] lg:flex-row lg:items-center">
-                        <div className="flex flex-col items-center gap-3 text-white max-lg:items-center lg:flex-row lg:justify-center">
-                            <span className="">
+                        <div className="flex flex-col items-center gap-2 text-white max-lg:items-center lg:flex-row lg:justify-center">
+                            <span className="flex items-center gap-1 whitespace-nowrap sm:gap-2">
                                 <Image
                                     src={"/assets/images/micro/loudspeaker.png"}
                                     alt="loudspeaker vector"
                                     className="flex aspect-square max-w-[34px] flex-shrink-0"
-                                    height={34}
-                                    width={34}
+                                    height={26}
+                                    width={26}
                                 />
+                                <span className="text-sm font-light sm:text-base">
+                                    NFO Live
+                                </span>
+                                <p className="hidden text-sm font-light sm:text-base lg:inline-flex">
+                                    -
+                                </p>
                             </span>
                             <span className="text-center text-sm font-light sm:text-base">
-                                NFO Live{" "}
-                                <p className="hidden lg:inline-flex">-</p>{" "}
+                                {/* NFO Live{" "} */}{" "}
                                 <br className="block lg:hidden" />
                                 <span className="font-bold max-md:whitespace-nowrap">
                                     {
