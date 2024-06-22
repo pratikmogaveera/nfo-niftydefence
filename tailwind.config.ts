@@ -80,6 +80,11 @@ const config = {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
             },
+            backgroundImage: {
+                "home-banner": "url('/assets/images/nifty-defence-banner.png')",
+                "home-banner-mobile":
+                    "url('/assets/images/nifty-defence-banner-mobile.png')",
+            },
         },
     },
     plugins: [require("tailwindcss-animate")],

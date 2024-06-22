@@ -1,9 +1,9 @@
-import CountDown from './CountDown'
-import Navbar from './Navbar'
+import CountDown from "./CountDown"
+import Navbar from "./Navbar"
 
 const Header = () => {
     return (
-        <header className='w-full'>
+        <header className="w-full">
             <CountDown />
             <Navbar />
         </header>
