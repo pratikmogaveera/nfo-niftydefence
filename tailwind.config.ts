@@ -23,6 +23,7 @@ const config = {
                     blue: "hsl(var(--mo-blue))",
                     yellow: {
                         DEFAULT: "hsl(var(--mo-yellow))",
+                        muted: "hsl(var(--mo-yellow-muted))",
                         secondary: "hsl(var(--mo-yellow-secondary))",
                     },
                     grey: "hsl(var(--mo-grey))",

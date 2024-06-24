@@ -53,7 +53,7 @@ export default function CountDown() {
     return (
         <Container className="bg-mo-blue">
             <Wrapper>
-                <div className="full flex min-h-[52px] flex-col items-center justify-center gap-3 px-4 py-4 sm:flex-row sm:px-8">
+                <div className="flex min-h-[52px] w-full flex-col items-center justify-center gap-3 px-4 py-4 sm:flex-row sm:px-8">
                     <div className="flex flex-col gap-3 text-[18px] leading-[28px] lg:flex-row lg:items-center">
                         <div className="flex flex-col items-center gap-x-2 text-white max-lg:items-center lg:flex-row lg:justify-center">
                             <span className="flex items-center gap-1 whitespace-nowrap sm:gap-2">

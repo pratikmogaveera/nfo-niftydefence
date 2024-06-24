@@ -9,7 +9,12 @@ const Wrapper = ({
     className?: string
 }) => {
     return (
-        <section className={cn("w-full max-w-[1366px]", className)}>
+        <section
+            className={cn(
+                "mx-auto w-full max-w-[90vw] 2xl:max-w-[1366px]",
+                className,
+            )}
+        >
             {children}
         </section>
     )
