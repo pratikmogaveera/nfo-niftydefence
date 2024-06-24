@@ -4,7 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function Home() {
     return (
-        <ScrollArea className="h-svh">
+        <ScrollArea className="h-screen">
             <main className="w-full justify-items-center bg-background text-foreground">
                 <Header />
                 <Banner />
