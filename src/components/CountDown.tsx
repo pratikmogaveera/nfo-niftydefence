@@ -108,7 +108,7 @@ export default function CountDown() {
                         <Button
                             size={"cta"}
                             variant={"outline"}
-                            className="text-white"
+                            className="text-white hover:text-white"
                         >
                             Call Back
                         </Button>
